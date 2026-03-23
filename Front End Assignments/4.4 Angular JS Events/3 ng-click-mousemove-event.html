@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Events Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button { padding: 8px 12px; margin: 10px; cursor: pointer; }
+  #mousemoveDiv { width: 300px; height: 200px; border: 1px solid #333; margin-top: 10px; text-align:center; line-height:200px; }
+  p { font-weight: bold; margin: 5px 0; }
+</style>
+</head>
+<body ng-controller="EventsController">
+
+<h2>ng-click Example</h2>
+<button ng-click="clickCount = clickCount + 1">Click Me</button>
+<p>Button clicked {{ clickCount }} times</p>
+
+<h2>ng-mousemove Example</h2>
+<div id="mousemoveDiv" ng-mousemove="updateMouse($event)">
+  Move your mouse here
+</div>
+<p>Mouse X: {{ mouseX }}, Mouse Y: {{ mouseY }}</p>
+
+<script>
+var app = angular.module('eventsApp', []);
+
+app.controller('EventsController', ['$scope', function($scope){
+  $scope.clickCount = 0;
+  $scope.mouseX = 0;
+  $scope.mouseY = 0;
+
+  $scope.updateMouse = function(event){
+    $scope.mouseX = event.offsetX;
+    $scope.mouseY = event.offsetY;
+  };
+}]);
+</script>
+
+</body>
+</html>

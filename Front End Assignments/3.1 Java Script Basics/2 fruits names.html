@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Fruits Descending</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 30px;
+            text-align: center;
+        }
+        h2 {
+            color: #ff6600;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 20px;
+            color: #333;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3399ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #007acc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fruits Array Sorting</h2>
+
+    <p>Click the button to sort fruits in descending order:</p>
+    <button onclick="sortFruits()">Sort Descending</button>
+
+    <h3>Fruits List:</h3>
+    <ul id="fruitsList">
+        <!-- Fruits will appear here -->
+    </ul>
+
+    <script>
+        // Create an array of fruits
+        var fruits = ["Apple", "Banana", "Mango", "Orange", "Pineapple", "Grapes"];
+
+        // Function to display fruits in the list
+        function displayFruits() {
+            var ul = document.getElementById("fruitsList");
+            ul.innerHTML = ""; // Clear previous list
+            for (var i = 0; i < fruits.length; i++) {
+                var li = document.createElement("li");
+                li.textContent = fruits[i];
+                ul.appendChild(li);
+            }
+        }
+
+        // Function to sort fruits in descending order
+        function sortFruits() {
+            fruits.sort();      // Sort in ascending order
+            fruits.reverse();   // Reverse to get descending order
+            displayFruits();    // Update the list on the page
+        }
+
+        // Display fruits initially
+        displayFruits();
+    </script>
+</body>
+</html>

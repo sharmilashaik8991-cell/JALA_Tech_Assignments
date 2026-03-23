@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Animations & Pagination</title>
+<style>
+/* Animation */
+@keyframes colorChange {
+  0% { background-color: coral; }
+  50% { background-color: lightblue; }
+  100% { background-color: coral; }
+}
+.animated-box {
+  width: 150px;
+  height: 150px;
+  background-color: coral;
+  margin: 20px auto;
+  animation-name: colorChange;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+.pagination li {
+  margin: 0 5px;
+}
+.pagination li a {
+  display: block;
+  padding: 8px 12px;
+  background-color: #008080;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.pagination li a:hover {
+  background-color: #20b2aa;
+}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">CSS Animation and Pagination</h2>
+
+<div class="animated-box"></div>
+
+<ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+</ul>
+
+</body>
+</html>

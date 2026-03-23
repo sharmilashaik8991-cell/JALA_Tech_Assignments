@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>call() vs apply()</title>
+</head>
+<body>
+<h2>Open console to see output</h2>
+<script>
+function greet(greeting, punctuation) {
+  console.log(`${greeting}, I am ${this.name}${punctuation}`);
+}
+
+const person = { name: "Alice" };
+
+// Using call: arguments passed individually
+greet.call(person, "Hello", "!"); // Hello, I am Alice!
+
+// Using apply: arguments passed as an array
+greet.apply(person, ["Hi", "!!"]); // Hi, I am Alice!!
+</script>
+</body>
+</html>

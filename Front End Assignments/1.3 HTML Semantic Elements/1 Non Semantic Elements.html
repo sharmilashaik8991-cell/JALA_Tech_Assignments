@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Non-Semantic Elements Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f8ff;
+  }
+  .container {
+    border: 2px solid #000;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #e0f7fa;
+  }
+  .highlight {
+    color: red;
+    font-weight: bold;
+  }
+  span {
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<h1>Non-Semantic Elements Example</h1>
+
+<div class="container">
+  <p>This is a paragraph inside a <span class="highlight">div</span> container.</p>
+  <p>Another <span>inline span element</span> inside the same div.</p>
+</div>
+
+<div class="container">
+  <p>Second div container example.</p>
+  <span class="highlight">This span is highlighted text inside a div.</span>
+</div>
+
+</body>
+</html>

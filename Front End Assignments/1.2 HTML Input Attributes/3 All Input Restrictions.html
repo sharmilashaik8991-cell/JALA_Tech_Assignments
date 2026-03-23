@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Restrictions</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background-color: #f0f8ff; }
+        h2 { color: #ff6600; }
+        input { margin: 5px 0; padding: 5px; font-size: 16px; }
+        label { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Input Restrictions</h2>
+    <form>
+        <label>Disabled: <input type="text" value="Can't Edit" disabled></label>
+        <label>Readonly: <input type="text" value="Readonly Text" readonly></label>
+        <label>Required: <input type="text" name="requiredField" required placeholder="Required Field"></label>
+        <label>Maxlength: <input type="text" maxlength="5" placeholder="Max 5 chars"></label>
+        <label>Min/Max: <input type="number" min="10" max="50" placeholder="10 to 50"></label>
+        <label>Size: <input type="text" size="10" value="Small"></label>
+        <label>Value: <input type="text" value="Predefined"></label>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

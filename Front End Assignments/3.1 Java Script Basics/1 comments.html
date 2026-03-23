@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Comments Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 30px;
+        }
+        h2 {
+            color: #ff6600;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript Comments Demo</h2>
+
+    <!-- Output will appear here -->
+    <p id="output"></p>
+
+    <!-- JavaScript code -->
+    <script>
+        // Single-line comment: prints a greeting
+        var outputText = "Hello! This is a single-line comment example.<br>";
+
+        /*
+            Multi-line comment:
+            The next line adds another message demonstrating a multi-line comment.
+        */
+        outputText += "Hello! This is a multi-line comment example.";
+
+        // Display the output directly on the page
+        document.getElementById('output').innerHTML = outputText;
+    </script>
+</body>
+</html>

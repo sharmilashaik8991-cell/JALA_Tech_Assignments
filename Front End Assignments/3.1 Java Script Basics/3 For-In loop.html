@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript FOR...IN Loop Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 30px;
+            text-align: center;
+        }
+        h2 {
+            color: #ff6600;
+        }
+        ul {
+            list-style-type: square;
+            padding: 0;
+            display: inline-block;
+            text-align: left;
+        }
+        li {
+            font-size: 18px;
+            color: #333;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>JavaScript FOR...IN Loop Demo</h2>
+
+    <p>Displaying properties of a student object:</p>
+    <ul id="outputList"></ul>
+
+    <script>
+        // Create an object
+        var student = {
+            name: "John Doe",
+            age: 20,
+            course: "Computer Science",
+            grade: "A"
+        };
+
+        // Use for...in loop to iterate over object properties
+        var ul = document.getElementById("outputList");
+
+        for (var key in student) {
+            if (student.hasOwnProperty(key)) { // Ensures it’s a direct property
+                var li = document.createElement("li");
+                li.textContent = key + ": " + student[key];
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>

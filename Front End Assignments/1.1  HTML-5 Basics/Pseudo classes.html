@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits & Benefits - Pseudo Classes Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        /* Pseudo-classes for list items */
+        li:first-child {
+            font-weight: bold;
+            background-color: #ffe0b2;
+        }
+
+        li:last-child {
+            font-style: italic;
+            background-color: #dcedc8;
+        }
+
+        li:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+
+        li:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            background-color: #ffd54f;
+            cursor: pointer;
+        }
+
+        /* Pseudo-class with :not() */
+        li:not(:first-child):not(:last-child) {
+            color: #555;
+        }
+
+        /* Pseudo-elements for decoration */
+        li::before {
+            content: "🍎 ";
+            margin-right: 8px;
+        }
+
+        li:last-child::before {
+            content: "🍌 ";
+        }
+
+        h1::after {
+            content: " 🥝";
+            margin-left: 10px;
+        }
+
+        p::first-letter {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: green;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: #e0f7fa;
+        }
+
+        section:nth-of-type(even) {
+            background-color: #f1f8e9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>Top Fruits for Health</h1>
+        <p>Eating fruits daily provides essential vitamins, minerals, and antioxidants for a healthy lifestyle.</p>
+        <ul>
+            <li>Apple - Rich in fiber and supports heart health.</li>
+            <li>Orange - High in vitamin C and boosts immunity.</li>
+            <li>Strawberry - Packed with antioxidants and improves skin health.</li>
+            <li>Banana - Great source of potassium and energy.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Exotic Fruits Benefits</h1>
+        <p>Exotic fruits bring unique flavors and nutritional benefits to your diet.</p>
+        <ul>
+            <li>Mango - Boosts immunity and aids digestion.</li>
+            <li>Papaya - Supports digestive health and skin glow.</li>
+            <li>Pineapple - Anti-inflammatory and rich in vitamin C.</li>
+            <li>Dragon Fruit - High in fiber and antioxidants.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>Fruits for Kids</h1>
+        <p>Fruits are a fun and healthy snack for children.</p>
+        <ul>
+            <li>Grapes - Sweet, juicy, and full of antioxidants.</li>
+            <li>Watermelon - Hydrating and rich in vitamins.</li>
+            <li>Blueberries - Small but packed with nutrients.</li>
+            <li>Banana - Easy to eat and energy-boosting.</li>
+        </ul>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Input Types</title>
+    <style>
+        body { font-family: Arial; background-color: #f0f8ff; padding: 30px; }
+        h2 { color: #ff6600; }
+        input, button { margin: 5px 0; padding: 5px; font-size: 16px; }
+        label { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Basic Input Attributes</h2>
+    <form>
+        <label>Text: <input type="text" name="username" placeholder="Enter Name"></label>
+        <label>Password: <input type="password" name="password" placeholder="Enter Password"></label>
+        <label>Radio:
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+        </label>
+        <label>Checkbox:
+            <input type="checkbox" name="hobby" value="Reading"> Reading
+            <input type="checkbox" name="hobby" value="Sports"> Sports
+        </label>
+        <label>Button: <button type="button" onclick="alert('Button Clicked')">Click Me</button></label>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

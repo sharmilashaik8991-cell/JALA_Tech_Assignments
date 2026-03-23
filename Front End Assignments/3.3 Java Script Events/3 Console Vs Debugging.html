@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Console Log Debugging</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button { padding: 8px 12px; background-color: #008080; color: white; border: none; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h2>Click to Debug Using console.log()</h2>
+<button id="debugBtn">Debug</button>
+
+<script>
+document.getElementById("debugBtn").addEventListener("click", function() {
+  let a = 5;
+  let b = 10;
+  console.log("Value of a:", a);
+  console.log("Value of b:", b);
+  let sum = a + b;
+  console.log("Sum of a + b:", sum);
+  alert("Check console for debugging output!");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Table Layout Example</title>
+<style>
+  table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+  }
+  .fixed {
+    table-layout: fixed;
+  }
+  .auto {
+    table-layout: auto; /* default behavior */
+  }
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">Table Layout: Fixed vs Auto</h2>
+
+<h3 style="text-align:center;">Fixed Table Layout</h3>
+<table class="fixed">
+  <tr>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>Fresh and juicy red apple</td>
+    <td>$1</td>
+  </tr>
+  <tr>
+    <td>Banana</td>
+    <td>Sweet yellow banana</td>
+    <td>$0.5</td>
+  </tr>
+</table>
+
+<h3 style="text-align:center;">Auto Table Layout</h3>
+<table class="auto">
+  <tr>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>Fresh and juicy red apple</td>
+    <td>$1</td>
+  </tr>
+  <tr>
+    <td>Banana</td>
+    <td>Sweet yellow banana</td>
+    <td>$0.5</td>
+  </tr>
+</table>
+
+</body>
+</html>

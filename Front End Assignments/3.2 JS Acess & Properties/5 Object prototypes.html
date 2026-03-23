@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prototype Example</title>
+</head>
+<body>
+<h2>Open console to see prototype properties</h2>
+<script>
+// Constructor function
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+// Add method via prototype
+Person.prototype.greet = function() {
+  console.log(`Hello, I am ${this.name}`);
+}
+
+// Add new property via prototype
+Person.prototype.species = "Human";
+
+const p1 = new Person("Bob", 25);
+
+console.log(p1.name); // Bob
+console.log(p1.age);  // 25
+console.log(p1.species); // Human
+p1.greet(); // Hello, I am Bob
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Semantic Tags Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #fafafa;
+  }
+  header, nav, section, article, aside, figure, footer {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f0f0f0;
+  }
+  hgroup h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  hgroup h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+  }
+  mark {
+    background-color: yellow;
+  }
+  nav ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  nav li {
+    display: inline;
+    margin-right: 10px;
+  }
+  figure img {
+    width: 150px;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <hgroup>
+    <h1>My Website</h1>
+    <h2>Learning HTML5 Semantic Tags</h2>
+  </hgroup>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#section1">Section 1</a></li>
+    <li><a href="#section2">Section 2</a></li>
+  </ul>
+</nav>
+
+<section id="section1">
+  <article>
+    <h3>Article Example</h3>
+    <p>This is an <mark>important</mark> paragraph in the article. Semantic tags improve accessibility and SEO.</p>
+  </article>
+
+  <aside>
+    <p>This is an aside: additional info or notes related to the main content.</p>
+  </aside>
+
+  <figure>
+    <img src="https://via.placeholder.com/150" alt="Example Image">
+    <figcaption>Figure 1: Example Image</figcaption>
+  </figure>
+</section>
+
+<section id="section2">
+  <article>
+    <p>This article includes a <time datetime="2026-03-23">date/time</time> reference to demonstrate HTML5 time tag.</p>
+  </article>
+</section>
+
+<footer>
+  <p>Website Footer &copy; 2026</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="domApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS DOM Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button, input { padding: 8px; margin: 5px 0; }
+  p { font-weight: bold; }
+</style>
+</head>
+<body ng-controller="DomController">
+
+<h2>Show/Hide Example</h2>
+<button ng-click="showText = !showText">Toggle Text</button>
+<p ng-show="showText">This text is visible using <code>ng-show</code>!</p>
+<p ng-hide="showText">This text is hidden using <code>ng-hide</code>!</p>
+
+<h2>Disabled Example</h2>
+<input type="text" placeholder="Type 'enable' to enable button" ng-model="inputText">
+<button ng-disabled="inputText != 'enable'">Click Me</button>
+
+<script>
+var app = angular.module('domApp', []);
+
+app.controller('DomController', ['$scope', function($scope){
+  $scope.showText = true;
+}]);
+</script>
+
+</body>
+</html>

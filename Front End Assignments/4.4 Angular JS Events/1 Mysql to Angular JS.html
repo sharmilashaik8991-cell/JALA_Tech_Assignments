@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mysqlApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS MySQL Fetch Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+  th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+  th { background-color: #f2f2f2; cursor: pointer; }
+</style>
+</head>
+<body ng-controller="DbController">
+
+<h2 style="text-align:center;">Data from MySQL Table</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr ng-repeat="person in people">
+    <td>{{ person.id }}</td>
+    <td>{{ person.name }}</td>
+    <td>{{ person.age }}</td>
+  </tr>
+</table>
+
+<script>
+var app = angular.module('mysqlApp', []);
+
+app.controller('DbController', ['$scope', '$http', function($scope, $http){
+  $scope.people = [];
+
+  // Fetch data from PHP/MySQL
+  $http.get('fetch_data.php').then(function(response){
+    $scope.people = response.data;
+  }, function(error){
+    console.error("Error fetching data from MySQL");
+  });
+}]);
+</script>
+
+</body>
+</html>

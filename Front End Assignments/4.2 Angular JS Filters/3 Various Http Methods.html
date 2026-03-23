@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="httpApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS $http Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button { padding: 8px 12px; margin: 5px; cursor: pointer; }
+  p { font-weight: bold; margin: 5px 0; }
+</style>
+</head>
+<body ng-controller="HttpController">
+
+<h2>AngularJS $http Methods Example</h2>
+
+<button ng-click="getData()">GET Data</button>
+<p>GET Response: {{ getDataResponse }}</p>
+
+<button ng-click="postData()">POST Data</button>
+<p>POST Response: {{ postDataResponse }}</p>
+
+<script>
+var app = angular.module('httpApp', []);
+
+app.controller('HttpController', ['$scope', '$http', function($scope, $http){
+
+  // GET
+  $scope.getData = function(){
+    $http.get('https://jsonplaceholder.typicode.com/posts/1')
+      .then(function(response){
+        $scope.getDataResponse = `Status: ${response.status}, Data: ${JSON.stringify(response.data)}`;
+      }, function(error){
+        $scope.getDataResponse = "Error in GET request";
+      });
+  };
+
+  // POST
+  $scope.postData = function(){
+    $http.post('https://jsonplaceholder.typicode.com/posts', {title: 'foo', body:'bar', userId:1})
+      .then(function(response){
+        $scope.postDataResponse = `Status: ${response.status}, Data: ${JSON.stringify(response.data)}`;
+      }, function(error){
+        $scope.postDataResponse = "Error in POST request";
+      });
+  };
+
+}]);
+</script>
+
+</body>
+</html>

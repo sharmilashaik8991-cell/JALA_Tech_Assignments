@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Getter/Setter Counter</title>
+</head>
+<body>
+<h2>Counter with Getter and Setter</h2>
+<p>Count: <span id="counterDisplay">0</span></p>
+<button id="incrementBtn">Increment</button>
+
+<script>
+const counter = {
+  _value: 0, // private property
+
+  get value() {
+    return this._value;
+  },
+
+  set value(val) {
+    if(val >= 0) { // only allow non-negative
+      this._value = val;
+    }
+  }
+};
+
+document.getElementById("incrementBtn").onclick = function() {
+  counter.value += 1; // uses setter
+  document.getElementById("counterDisplay").innerText = counter.value; // uses getter
+}
+</script>
+</body>
+</html>

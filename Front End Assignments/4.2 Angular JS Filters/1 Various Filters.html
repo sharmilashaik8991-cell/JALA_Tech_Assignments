@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="filterApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Filters Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  input { padding: 5px; margin: 5px 0; width: 200px; }
+  p { margin: 5px 0; }
+</style>
+</head>
+<body ng-controller="FilterController">
+
+<h2>Built-in Filters</h2>
+<p>Original Date: {{ today | date:'fullDate' }}</p>
+<p>Uppercase Name: {{ name | uppercase }}</p>
+<p>Lowercase Name: {{ name | lowercase }}</p>
+<p>Number (2 decimal): {{ price | number:2 }}</p>
+
+<h2>Custom Filter Example</h2>
+<input type="text" ng-model="textInput" placeholder="Enter text">
+<p>Custom Filter Output: {{ textInput | reverse }}</p>
+
+<script>
+  var app = angular.module('filterApp', []);
+
+  // Controller
+  app.controller('FilterController', ['$scope', function($scope){
+    $scope.today = new Date();
+    $scope.name = "AngularJS Example";
+    $scope.price = 1234.567;
+  }]);
+
+  // Custom Filter
+  app.filter('reverse', function() {
+    return function(input) {
+      if (!input) return '';
+      return input.split('').reverse().join('');
+    }
+  });
+</script>
+
+</body>
+</html>

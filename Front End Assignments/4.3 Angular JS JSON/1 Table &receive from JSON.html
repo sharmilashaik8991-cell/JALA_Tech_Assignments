@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jsonTableApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Table with JSON and Filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  table { width: 80%; border-collapse: collapse; margin: 20px auto; }
+  th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+  th { cursor: pointer; background-color: #f2f2f2; }
+  tr.odd { background-color: #e0f7fa; }
+  tr.even { background-color: #ffe0b2; }
+</style>
+</head>
+<body ng-controller="TableController">
+
+<h2 style="text-align:center;">JSON Table with Sorting and Index</h2>
+
+<table>
+  <tr>
+    <th ng-click="sortColumn='id'">ID</th>
+    <th ng-click="sortColumn='name'">Name</th>
+    <th ng-click="sortColumn='age'">Age</th>
+    <th>Index</th>
+  </tr>
+  <tr ng-repeat="person in people | orderBy:sortColumn" 
+      ng-class="{'odd': $odd, 'even': $even}">
+    <td>{{ person.id }}</td>
+    <td>{{ person.name }}</td>
+    <td>{{ person.age }}</td>
+    <td>{{ $index }}</td>
+  </tr>
+</table>
+
+<script>
+var app = angular.module('jsonTableApp', []);
+
+app.controller('TableController', ['$scope', '$http', function($scope, $http) {
+  $scope.sortColumn = 'id'; // default sort
+
+  // Load JSON data
+  $http.get('people.json').then(function(response){
+    $scope.people = response.data;
+  }, function(error){
+    console.error("Error loading JSON data");
+    $scope.people = [];
+  });
+}]);
+</script>
+
+</body>
+</html>

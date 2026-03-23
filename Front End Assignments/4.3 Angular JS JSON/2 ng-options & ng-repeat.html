@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="selectApp">
+<head>
+<meta charset="UTF-8">
+<title>ng-options vs ng-repeat</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  select { padding: 5px; margin: 10px 0; width: 200px; }
+  p { font-weight: bold; }
+</style>
+</head>
+<body ng-controller="SelectController">
+
+<h2>Select Example with ng-options</h2>
+<select ng-model="selectedPerson" ng-options="person.name for person in people"></select>
+<p>Selected (ng-options): {{ selectedPerson.name }}</p>
+
+<h2>Select Example with ng-repeat</h2>
+<select ng-model="selectedPerson2">
+  <option ng-repeat="person in people" value="{{person.name}}">{{person.name}}</option>
+</select>
+<p>Selected (ng-repeat): {{ selectedPerson2 }}</p>
+
+<script>
+var app = angular.module('selectApp', []);
+
+app.controller('SelectController', ['$scope', function($scope){
+  $scope.people = [
+    {id:1, name:'Alice'},
+    {id:2, name:'Bob'},
+    {id:3, name:'Charlie'},
+    {id:4, name:'Diana'}
+  ];
+
+  // ng-options automatically binds object
+  $scope.selectedPerson = $scope.people[0];
+
+  // ng-repeat binds string, not object
+  $scope.selectedPerson2 = $scope.people[0].name;
+}]);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JSON Dot Notation</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button { padding: 8px 12px; margin: 5px; cursor: pointer; }
+  p { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>JSON Object Example</h2>
+<button onclick="showJSON()">Show JSON Data</button>
+<p id="jsonOutput"></p>
+
+<script>
+function showJSON() {
+  const person = {
+    name: "Alice",
+    age: 25,
+    city: "New York"
+  };
+  const output = `Name: ${person.name}, Age: ${person.age}, City: ${person.city}`;
+  document.getElementById("jsonOutput").innerText = output;
+}
+</script>
+
+</body>
+</html>

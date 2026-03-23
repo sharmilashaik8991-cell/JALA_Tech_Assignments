@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cookie Example</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button { padding: 8px 12px; margin: 5px; cursor: pointer; }
+  p { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>Cookie Example</h2>
+<button onclick="setCookie('username', 'Alice', 7)">Set Cookie</button>
+<button onclick="getCookie('username')">Get Cookie</button>
+<button onclick="checkCookie('username')">Check Cookie</button>
+<p id="cookieOutput"></p>
+
+<script>
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  document.getElementById("cookieOutput").innerText = "Cookie set!";
+}
+
+function getCookie(name) {
+  const cname = name + "=";
+  const decoded = decodeURIComponent(document.cookie);
+  const ca = decoded.split(';');
+  for(let i=0;i<ca.length;i++){
+    let c = ca[i].trim();
+    if(c.indexOf(cname) === 0) {
+      document.getElementById("cookieOutput").innerText = "Cookie value: " + c.substring(cname.length,c.length);
+      return;
+    }
+  }
+  document.getElementById("cookieOutput").innerText = "Cookie not found!";
+}
+
+function checkCookie(name) {
+  const value = getCookieValue(name);
+  if(value) {
+    document.getElementById("cookieOutput").innerText = "Cookie exists: " + value;
+  } else {
+    document.getElementById("cookieOutput").innerText = "Cookie does not exist!";
+  }
+}
+
+function getCookieValue(name) {
+  const cname = name + "=";
+  const decoded = decodeURIComponent(document.cookie);
+  const ca = decoded.split(';');
+  for(let i=0;i<ca.length;i++){
+    let c = ca[i].trim();
+    if(c.indexOf(cname) === 0) return c.substring(cname.length,c.length);
+  }
+  return "";
+}
+</script>
+
+</body>
+</html>s

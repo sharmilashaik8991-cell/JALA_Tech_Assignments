@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Object Example</title>
+    <style>
+        body { font-family: Arial; background-color: #f0f8ff; padding: 30px; }
+        h2 { color: #ff6600; }
+        p { font-size: 18px; color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Accessing Object Properties</h2>
+    <p id="output"></p>
+
+    <script>
+        // Create person object
+        var person = {
+            firstname: "John",
+            lastname: "Doe"
+        };
+
+        // Access using dot notation
+        var message1 = "Dot notation: " + person.firstname + " " + person.lastname;
+
+        // Access using bracket notation
+        var message2 = "Bracket notation: " + person["firstname"] + " " + person["lastname"];
+
+        // Display on page
+        document.getElementById("output").innerHTML = message1 + "<br>" + message2;
+    </script>
+</body>
+</html>

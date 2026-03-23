@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smooth Scroll Example</title>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    height: 2000px;
+    padding: 20px;
+  }
+  .scroll-link {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: coral;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+<a href="#bottom" class="scroll-link">Go to Bottom</a>
+<a href="#top" class="scroll-link">Go to Top</a>
+
+<h1 id="top">Top of the Page</h1>
+<p>Scroll down to see the bottom link...</p>
+
+<h1 id="bottom" style="margin-top:1800px;">Bottom of the Page</h1>
+<p>You have reached the bottom!</p>
+</body>
+</html>

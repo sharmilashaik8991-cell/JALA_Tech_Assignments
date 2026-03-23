@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Viewport & Media Queries</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  
+  /* Grid Layout */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .grid-item {
+    background-color: lightcoral;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Images & Videos */
+  img, video {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 800px) {
+    .grid-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 500px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h2>Grid with Responsive Media Queries</h2>
+<div class="grid-container">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+</div>
+
+<h2>Responsive Image</h2>
+<img src="https://via.placeholder.com/800x300" alt="Example Image">
+
+<h2>Responsive Video</h2>
+<video controls>
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+</body>
+</html>

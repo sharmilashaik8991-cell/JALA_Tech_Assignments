@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strict Mode Example</title>
+    <style>
+        body { font-family: Arial; background-color: #f0f8ff; padding: 30px; }
+        h2 { color: #ff6600; }
+        p { font-size: 18px; color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Strict Mode Example</h2>
+    <p id="output"></p>
+
+    <script>
+        "use strict"; // Enable strict mode
+
+        try {
+            // Trying to assign to an undeclared variable
+            y = 20; // This will cause an error in strict mode
+            document.getElementById("output").innerHTML = "Value of y: " + y;
+        } catch (err) {
+            document.getElementById("output").innerHTML = "Error: " + err.message;
+        }
+    </script>
+</body>
+</html>

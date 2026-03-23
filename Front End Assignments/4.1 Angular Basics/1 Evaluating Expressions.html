@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Expressions & Textbox Color</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  input {
+    padding: 8px;
+    width: 200px;
+    margin: 10px 0;
+    border: 1px solid #333;
+    border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+
+<h2>Evaluate Expressions Using {{ }}</h2>
+
+<p>Enter two numbers:</p>
+<input type="number" ng-model="num1" placeholder="Number 1">
+<input type="number" ng-model="num2" placeholder="Number 2">
+
+<p>Sum: {{ num1 + num2 }}</p>
+<p>Product: {{ num1 * num2 }}</p>
+
+<h2>Change Textbox Background Color</h2>
+<input type="text" ng-model="bgColor" placeholder="Enter color" 
+       ng-style="{'background-color': bgColor}">
+
+</body>
+</html>

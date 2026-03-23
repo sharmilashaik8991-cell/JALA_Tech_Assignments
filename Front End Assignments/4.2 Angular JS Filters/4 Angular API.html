@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="apiApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS API Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  input { padding: 5px; margin: 5px 0; width: 250px; }
+  p { margin: 5px 0; font-weight: bold; }
+</style>
+</head>
+<body ng-controller="ApiController">
+
+<h2>AngularJS API Example</h2>
+<input type="text" ng-model="textInput" placeholder="Type something">
+<p>Lowercase using angular.lowercase(): {{ lowerText }}</p>
+<p>Uppercase using angular.uppercase(): {{ upperText }}</p>
+
+<script>
+var app = angular.module('apiApp', []);
+
+app.controller('ApiController', ['$scope', function($scope){
+  $scope.$watch('textInput', function(newVal){
+    $scope.lowerText = angular.lowercase(newVal || '');
+    $scope.upperText = angular.uppercase(newVal || '');
+  });
+}]);
+</script>
+
+</body>
+</html>

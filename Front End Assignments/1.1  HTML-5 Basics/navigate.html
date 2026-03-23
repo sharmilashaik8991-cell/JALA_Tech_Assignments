@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigate Within Page</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        /* Sections */
+        section {
+            height: 100vh;
+            padding: 40px;
+        }
+
+        #home {
+            background-color: lightblue;
+        }
+
+        #about {
+            background-color: lightgreen;
+        }
+
+        #services {
+            background-color: lightcoral;
+        }
+
+        #contact {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Links -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Home Section</h1>
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JAVA SCRIPT</p>
+        <p>PYTHON</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1>About Section</h1>
+        <h5>HTML</h5>
+        <p>HTML (HyperText Markup Language) is used to create the structure of web pages. It defines elements like
+            headings, paragraphs, links, and images</p>
+        <p>HTML is the backbone of every website. It organizes content using tags like &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, and more.</p>
+        <h5>CSS</h5>
+        <p>CSS (Cascading Style Sheets) is used to style web pages. It controls colors, fonts, layouts, and makes the website visually attractive.</p>
+        <p>CSS helps in designing the website. It can make pages responsive and attractive using layouts like Flexbox and Grid</p>
+        <h5>JAVA SCRIPT</h5>
+        <p>JavaScript is a programming language used to make web pages interactive. It can update content, validate forms, create animations, and handle events.</p>
+        <p>JavaScript allows dynamic behavior on websites. Libraries and frameworks like React, Vue, and Angular extend its capabilities for complex web applications.</p>
+        <h5>PYTHON</h5>
+        <p>Python is a versatile programming language used for web development, data analysis, automation, artificial intelligence, and more.</p>
+        <p>Python is known for its readability and simplicity. Frameworks like Django and Flask allow developers to build powerful web applications efficiently.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h1>Services Section</h1>
+
+        <h5>Web Development</h5>
+        <p>We offer front-end and back-end web development using HTML, CSS, JavaScript, and Python frameworks like Django and Flask.</p>
+
+        <h5>UI/UX Design</h5>
+        <p>Our team designs responsive and visually appealing user interfaces, ensuring excellent user experience on all devices.</p>
+
+        <h5>Data Analysis & AI</h5>
+        <p>We provide data analysis, visualization, and AI solutions using Python libraries like Pandas, NumPy, and TensorFlow.</p>
+
+        <h5>SEO & Digital Marketing</h5>
+        <p>Boost your online presence with our SEO optimization, social media marketing, and content strategy services.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Contact Section</h1>
+
+        <h5>Email</h5>
+        <p>You can reach us at: <a href="mailto:info@example.com">info@example.com</a></p>
+
+        <h5>Phone</h5>
+        <p>Call us at: +1 (123) 456-7890</p>
+
+        <h5>Address</h5>
+        <p>123 Web Solutions Street, Tech City, USA</p>
+
+        <h5>Social Media</h5>
+        <p>Follow us on:
+            <a href="#">Facebook</a>,
+            <a href="#">Twitter</a>,
+            <a href="#">LinkedIn</a>
+        </p>
+    </section>
+
+</body>
+
+</html>

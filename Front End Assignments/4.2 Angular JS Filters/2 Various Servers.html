@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="serviceApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Services Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  button { padding: 8px 12px; margin: 5px; cursor: pointer; }
+  p { margin: 5px 0; font-weight: bold; }
+</style>
+</head>
+<body ng-controller="ServiceController">
+
+<h2>AngularJS Services</h2>
+
+<p>Current URL Path: {{ path }}</p>
+<button ng-click="changePath()">Change Path</button>
+
+<p>HTTP Data:</p>
+<button ng-click="loadData()">Load Data</button>
+<p>{{ data }}</p>
+
+<p>Timeout Message: {{ timeoutMsg }}</p>
+
+<p>Custom Service Output: {{ customData }}</p>
+
+<script>
+var app = angular.module('serviceApp', []);
+
+// Custom Service
+app.service('MyService', function(){
+  this.getMessage = function(){
+    return "Hello from Custom Service!";
+  };
+});
+
+// Controller
+app.controller('ServiceController', ['$scope', '$location', '$http', '$timeout', 'MyService', 
+function($scope, $location, $http, $timeout, MyService){
+  
+  // $location
+  $scope.path = $location.path();
+  $scope.changePath = function(){
+    $location.path('/newpath');
+    $scope.path = $location.path();
+  };
+
+  // $http example (GET dummy JSON)
+  $scope.data = '';
+  $scope.loadData = function(){
+    $http.get('https://jsonplaceholder.typicode.com/todos/1')
+      .then(function(response){
+        $scope.data = JSON.stringify(response.data);
+      }, function(error){
+        $scope.data = "Error loading data";
+      });
+  };
+
+  // $timeout
+  $scope.timeoutMsg = '';
+  $timeout(function(){
+    $scope.timeoutMsg = "Message after 3 seconds using $timeout!";
+  }, 3000);
+
+  // Custom Service
+  $scope.customData = MyService.getMessage();
+
+}]);
+</script>
+
+</body>
+</html>

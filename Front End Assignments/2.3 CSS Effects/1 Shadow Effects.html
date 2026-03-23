@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Shadow Effects</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  .image-box {
+    width: 200px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.7);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h2 style="text-align:center;">CSS Shadow Effect on Image</h2>
+<img src="https://via.placeholder.com/200" alt="Example Image" class="image-box">
+</body>
+</html>

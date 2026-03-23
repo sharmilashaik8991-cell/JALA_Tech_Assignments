@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Borders Example</title>
+    <style>
+        /* Body styling for background and font */
+        body {
+            background: linear-gradient(to right, #f0f8ff, #e6e6fa); /* Light gradient background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Centering the box and adding padding */
+        .border-box {
+            width: 400px;
+            height: 200px;
+            margin: 80px auto;
+            padding: 20px;
+            text-align: center;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #ffffff, #f9f9ff); /* subtle gradient inside the box */
+            border-radius: 20px; /* rounded corners */
+
+            /* Different borders on each side */
+            border-top: 5px solid #ff4d4d;       /* Red solid top */
+            border-right: 8px dashed #3399ff;    /* Blue dashed right */
+            border-bottom: 10px dotted #33cc33;  /* Green dotted bottom */
+            border-left: 12px double #9933ff;    /* Purple double left */
+
+            /* Shadow for depth */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s; /* smooth hover effect */
+        }
+
+        /* Hover effect to attract attention */
+        .border-box:hover {
+            transform: scale(1.05); /* slightly enlarge */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* stronger shadow */
+        }
+
+        /* Stylish heading */
+        .border-box h2 {
+            margin-top: 0;
+            color: #ff6600; /* Orange heading */
+        }
+
+        /* Paragraph styling */
+        .border-box p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="border-box">
+        <h2>Stylish Box with Unique Borders</h2>
+        <p>Hover over me to see the animation! Each border has a different style, width, and color.</p>
+        <p>Place a curser on the box you can see aa moment</p>
+    </div>
+</body>
+</html>

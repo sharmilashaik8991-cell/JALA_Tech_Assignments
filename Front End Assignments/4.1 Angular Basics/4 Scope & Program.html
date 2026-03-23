@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scopeApp">
+<head>
+<meta charset="UTF-8">
+<title>$scope & $rootScope Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script>
+  var app = angular.module('scopeApp', []);
+
+  app.run(function($rootScope){
+    $rootScope.rootMessage = "This is $rootScope message";
+  });
+
+  app.controller('ChildController', ['$scope', function($scope){
+    $scope.childMessage = "This is $scope message";
+  }]);
+</script>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  p { font-weight: bold; margin: 10px 0; }
+</style>
+</head>
+<body ng-controller="ChildController">
+
+<h2>AngularJS $scope and $rootScope</h2>
+<p>Root Scope Message: {{ rootMessage }}</p>
+<p>Child Scope Message: {{ childMessage }}</p>
+
+</body>
+</html>

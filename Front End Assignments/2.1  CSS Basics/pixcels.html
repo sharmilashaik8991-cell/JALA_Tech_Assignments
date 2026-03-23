@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height and Width Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            text-align: center;
+            padding: 40px 20px; /* Add space around page */
+        }
+
+        h2 {
+            color: #ff6600;
+            margin-bottom: 40px;
+        }
+
+        /* Box with fixed pixel size */
+        .pixel-box {
+            width: 300px;  /* Fixed width in pixels */
+            height: 150px; /* Fixed height in pixels */
+            background-color: #ffcccb; /* Light red */
+            margin: 20px auto; /* Center horizontally with spacing */
+            display: flex;
+            align-items: center; /* Vertically center text */
+            justify-content: center; /* Horizontally center text */
+            color: #333;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Box with percentage size */
+        .percent-box {
+            width: 70%;          /* Width as percentage of parent */
+            height: 150px;       /* Fixed pixel height for clarity */
+            max-width: 600px;    /* Optional: prevent it from getting too wide on large screens */
+            background-color: #add8e6; /* Light blue */
+            margin: 40px auto;   /* Add more spacing to separate from pixel box */
+            display: flex;
+            align-items: center; /* Vertically center text */
+            justify-content: center; /* Horizontally center text */
+            color: #333;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <h2>Height and Width Example</h2>
+
+    <!-- Box with fixed pixel width and height -->
+    <div class="pixel-box">
+        Pixel Box (300px × 150px)
+    </div>
+
+    <!-- Box with percentage width -->
+    <div class="percent-box">
+        Percent Box (70% width, 150px height)
+    </div>
+</body>
+</html>
